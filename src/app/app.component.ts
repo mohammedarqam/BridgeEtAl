@@ -16,7 +16,7 @@ import { SignUpPage } from '../pages/Auth/sign-up/sign-up';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = BannerPage;
+  rootPage: any = ContactUsPage;
 
   pages: Array<{title: string, component: any}>;
 
@@ -43,5 +43,8 @@ export class MyApp {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
+  }
+  gtBannerPage(){
+    this.nav.setRoot(BannerPage);
   }
 }
