@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item *ngFor="let i of mainArr" >
+    {{i.first}}
+  </ion-item>
+
+  <button ion-button (click)="getData()">Get Data</button>
+  <button ion-button (click)="doSumthing()">Do Sumthing</button>
+
+
+</ion-content>

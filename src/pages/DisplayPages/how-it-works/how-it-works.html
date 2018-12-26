@@ -1,0 +1,644 @@
+<ion-header>
+  <ion-navbar padding>
+    <ion-title>
+      <img (click)="gtBP()" ion-button clear src="assets/imgs/beaLogo.png" /><br />
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="gtHIW()">How it Works</button>
+      <button ion-button>Insights</button>
+      <button ion-button (click)="gtCU()">Contact Us</button>
+      <button ion-button (click)="gtLogin()">Login</button>
+      <button ion-button (click)="gtSignUp()">Sign Up</button>
+
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <div class="half">
+
+    <div padding>
+      <ion-segment [(ngModel)]="accnts">
+        <ion-segment-button value="Experts">
+          <h5>Experts</h5>
+        </ion-segment-button>
+        <ion-segment-button value="Business">
+          <h5>Business</h5>
+        </ion-segment-button>
+        <ion-segment-button value="BCF">
+          <h5>Boutique Consulting Firm</h5>
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+
+    <div [ngSwitch]="accnts">
+
+
+      <ion-list *ngSwitchCase="'Experts'">
+        <img src="assets/imgs/hitw/ExpertsNew.gif" />
+        <h1 ion-text color="primary">FAQs</h1>
+
+        <ion-card>
+          <ion-navbar color="primary">
+            <ion-title>Who are the experts?</ion-title>
+            <ion-buttons end>
+              <button ion-button *ngIf="!f1" clear icon-only (click)="this.f1 = !this.f1;">
+                <ion-icon name="ios-arrow-down"></ion-icon>
+              </button>
+              <button ion-button *ngIf="f1" clear icon-only (click)="this.f1 = !this.f1;">
+                <ion-icon name="ios-arrow-up"></ion-icon>
+              </button>
+            </ion-buttons>
+          </ion-navbar>
+          <ion-card-content *ngIf="f1">
+            <h2>
+              Experts are qualified professionals with rich knowledge and experience in their areas of specialization.
+              Currently Bridge Et Al. offers experts in the areas of Change Management, Transformation, Human
+              Resources, Digitization and Strategy. These experts are given access to the Bridge Et Al. platform only
+              after being evaluated through Bridge Et Al. futuristic custom algorithm solution, ensuring that only the
+              most qualified experts can bid for projects. Furthermore, Bridge Et Al ratings and review system enables
+              clients to see exactly how experts have performed on past projects.
+            </h2>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card>
+          <ion-navbar color="primary">
+            <ion-title>How does the pricing work?</ion-title>
+            <ion-buttons end>
+              <button ion-button *ngIf="!f2" clear icon-only (click)="this.f2 = !this.f2;">
+                <ion-icon name="ios-arrow-down"></ion-icon>
+              </button>
+              <button ion-button *ngIf="f2" clear icon-only (click)="this.f2 = !this.f2;">
+                <ion-icon name="ios-arrow-up"></ion-icon>
+              </button>
+            </ion-buttons>
+          </ion-navbar>
+          <ion-card-content *ngIf="f2">
+            <h2>
+              The pricing is decided by the client as weekly, daily or hourly charges. This can vary based on project
+              type, length, time sensitivity and required experience. For the experts, it is suggested to indicate a
+              rough estimate of desired budget in your project proposal, which gives either party an insight to move
+              things forward. Bridge Et Al. does not charge any fee from the experts. However, the businesses are
+              charged 25% of expert fee as processing charges. </h2>
+          </ion-card-content>
+        </ion-card>
+
+
+
+        <ion-card>
+          <ion-navbar color="primary">
+            <ion-title>What about the compliance and legal aspects?</ion-title>
+            <ion-buttons end>
+              <button ion-button *ngIf="!f3" clear icon-only (click)="this.f3 = !this.f3;">
+                <ion-icon name="ios-arrow-down"></ion-icon>
+              </button>
+              <button ion-button *ngIf="f3" clear icon-only (click)="this.f3 = !this.f3;">
+                <ion-icon name="ios-arrow-up"></ion-icon>
+              </button>
+            </ion-buttons>
+          </ion-navbar>
+          <ion-card-content *ngIf="f3">
+            <h2>Bridge Et Al. is a service provider platform. All compliance and legal aspects of a project are
+              directed by the project guidelines and policies in accordance with statutory requirements.</h2>
+            <h2>
+              It is suggested that all the communications happen through the Bridge Et Al. platform to avoid any
+              communication gap.
+            </h2>
+          </ion-card-content>
+        </ion-card>
+
+
+        <ion-card>
+          <ion-navbar color="primary">
+            <ion-title>Who guarantees quality?</ion-title>
+            <ion-buttons end>
+              <button ion-button *ngIf="!f4" clear icon-only (click)="this.f4 = !this.f4;">
+                <ion-icon name="ios-arrow-down"></ion-icon>
+              </button>
+              <button ion-button *ngIf="f4" clear icon-only (click)="this.f4 = !this.f4;">
+                <ion-icon name="ios-arrow-up"></ion-icon>
+              </button>
+            </ion-buttons>
+          </ion-navbar>
+          <ion-card-content *ngIf="f4">
+            <h2>Project completion with the desired quality is knitted into our rating process, which is mapped by the
+              Bridge Et Al. platform. We offer businesses an opportunity to access the quality of the experts by going
+              through their project proposals and also through the opportunity of interviews with the experts. It is
+              suggested that the business clearly communicates the desired project outcome with key success indicators
+              in project details as well as at the time of on boarding of the expert.
+            </h2>
+          </ion-card-content>
+        </ion-card>
+
+
+        <ion-card>
+          <ion-navbar color="primary">
+            <ion-title>What about confidentiality?</ion-title>
+            <ion-buttons end>
+              <button ion-button *ngIf="!f5" clear icon-only (click)="this.f5 = !this.f5;">
+                <ion-icon name="ios-arrow-down"></ion-icon>
+              </button>
+              <button ion-button *ngIf="f5" clear icon-only (click)="this.f5 = !this.f5;">
+                <ion-icon name="ios-arrow-up"></ion-icon>
+              </button>
+            </ion-buttons>
+          </ion-navbar>
+          <ion-card-content *ngIf="f5">
+            <h2>
+              While all experts agree to keep all of their work through the Bridge Et Al. platform confidential when
+              they join the network, many of our business users choose to have experts execute their own NDA.
+              Confidentiality and privacy are of the utmost importance to us. Please refer to our Privacy Policy for
+              more information.
+            </h2>
+          </ion-card-content>
+        </ion-card>
+
+
+
+
+      </ion-list>
+
+      <ion-list *ngSwitchCase="'Business'">
+        <img src="assets/imgs/hitw/BusinessNew.gif" />
+        <h1 ion-text color="primary">FAQs</h1>
+
+        <ion-card>
+          <ion-navbar color="primary">
+            <ion-title>Who are the experts?</ion-title>
+            <ion-buttons end>
+              <button ion-button *ngIf="!f1" clear icon-only (click)="this.f1 = !this.f1;">
+                <ion-icon name="ios-arrow-down"></ion-icon>
+              </button>
+              <button ion-button *ngIf="f1" clear icon-only (click)="this.f1 = !this.f1;">
+                <ion-icon name="ios-arrow-up"></ion-icon>
+              </button>
+            </ion-buttons>
+          </ion-navbar>
+          <ion-card-content *ngIf="f1">
+            <h2>
+              Experts are qualified professionals with rich knowledge and experience in their areas of specialization.
+              Currently Bridge Et Al. offers experts in the areas of Change Management, Transformation, Human
+              Resources, Digitization and Strategy. These experts are given access to the Bridge Et Al. platform only
+              after being evaluated through Bridge Et Al. futuristic custom algorithm solution, ensuring that only the
+              most qualified experts can bid for projects. Furthermore, Bridge Et Al ratings and review system enables
+              clients to see exactly how experts have performed on past projects.
+            </h2>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card>
+          <ion-navbar color="primary">
+            <ion-title>How does the pricing work?</ion-title>
+            <ion-buttons end>
+              <button ion-button *ngIf="!f2" clear icon-only (click)="this.f2 = !this.f2;">
+                <ion-icon name="ios-arrow-down"></ion-icon>
+              </button>
+              <button ion-button *ngIf="f2" clear icon-only (click)="this.f2 = !this.f2;">
+                <ion-icon name="ios-arrow-up"></ion-icon>
+              </button>
+            </ion-buttons>
+          </ion-navbar>
+          <ion-card-content *ngIf="f2">
+            <h2>
+              The pricing is decided by the client as weekly, daily or hourly charges. This can vary based on project
+              type, length, time sensitivity and required experience. For the experts, it is suggested to indicate a
+              rough estimate of desired budget in your project proposal, which gives either party an insight to move
+              things forward. Bridge Et Al. does not charge any fee from the experts. However, the businesses are
+              charged 25% of expert fee as processing charges. </h2>
+          </ion-card-content>
+        </ion-card>
+
+
+
+        <ion-card>
+          <ion-navbar color="primary">
+            <ion-title>What about the compliance and legal aspects?</ion-title>
+            <ion-buttons end>
+              <button ion-button *ngIf="!f3" clear icon-only (click)="this.f3 = !this.f3;">
+                <ion-icon name="ios-arrow-down"></ion-icon>
+              </button>
+              <button ion-button *ngIf="f3" clear icon-only (click)="this.f3 = !this.f3;">
+                <ion-icon name="ios-arrow-up"></ion-icon>
+              </button>
+            </ion-buttons>
+          </ion-navbar>
+          <ion-card-content *ngIf="f3">
+            <h2>Bridge Et Al. is a service provider platform. All compliance and legal aspects of a project are
+              directed by the project guidelines and policies in accordance with statutory requirements.</h2>
+            <h2>
+              It is suggested that all the communications happen through the Bridge Et Al. platform to avoid any
+              communication gap.
+            </h2>
+          </ion-card-content>
+        </ion-card>
+
+
+        <ion-card>
+          <ion-navbar color="primary">
+            <ion-title>Who guarantees quality?</ion-title>
+            <ion-buttons end>
+              <button ion-button *ngIf="!f4" clear icon-only (click)="this.f4 = !this.f4;">
+                <ion-icon name="ios-arrow-down"></ion-icon>
+              </button>
+              <button ion-button *ngIf="f4" clear icon-only (click)="this.f4 = !this.f4;">
+                <ion-icon name="ios-arrow-up"></ion-icon>
+              </button>
+            </ion-buttons>
+          </ion-navbar>
+          <ion-card-content *ngIf="f4">
+            <h2>Project completion with the desired quality is knitted into our rating process, which is mapped by the
+              Bridge Et Al. platform. We offer businesses an opportunity to access the quality of the experts by going
+              through their project proposals and also through the opportunity of interviews with the experts. It is
+              suggested that the business clearly communicates the desired project outcome with key success indicators
+              in project details as well as at the time of on boarding of the expert.
+            </h2>
+          </ion-card-content>
+        </ion-card>
+
+
+        <ion-card>
+          <ion-navbar color="primary">
+            <ion-title>What about confidentiality?</ion-title>
+            <ion-buttons end>
+              <button ion-button *ngIf="!f5" clear icon-only (click)="this.f5 = !this.f5;">
+                <ion-icon name="ios-arrow-down"></ion-icon>
+              </button>
+              <button ion-button *ngIf="f5" clear icon-only (click)="this.f5 = !this.f5;">
+                <ion-icon name="ios-arrow-up"></ion-icon>
+              </button>
+            </ion-buttons>
+          </ion-navbar>
+          <ion-card-content *ngIf="f5">
+            <h2>
+              While all experts agree to keep all of their work through the Bridge Et Al. platform confidential when
+              they join the network, many of our business users choose to have experts execute their own NDA.
+              Confidentiality and privacy are of the utmost importance to us. Please refer to our Privacy Policy for
+              more information.
+            </h2>
+          </ion-card-content>
+        </ion-card>
+
+
+      </ion-list>
+
+      <ion-list *ngSwitchCase="'BCF'">
+        <img src="assets/imgs/hitw/BoutiqueNew.gif" />
+        <h1 ion-text color="primary">FAQs</h1>
+
+        <ion-card>
+          <ion-navbar color="primary">
+            <ion-title>
+              Can a Boutique Consulting Firm act as a Client (Business User) as well as an expert?
+            </ion-title>
+            <ion-buttons end>
+              <button ion-button *ngIf="!b1" clear icon-only (click)="this.b1 = !this.b1;">
+                <ion-icon name="ios-arrow-down"></ion-icon>
+              </button>
+              <button ion-button *ngIf="b1" clear icon-only (click)="this.b1 = !this.b1;">
+                <ion-icon name="ios-arrow-up"></ion-icon>
+              </button>
+            </ion-buttons>
+          </ion-navbar>
+          <ion-card-content *ngIf="b1">
+            <h2>
+              Absolutely. Bridge Et Al. also provides you a single sign up option, as an expert and a client.
+            </h2>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card>
+          <ion-navbar color="primary">
+            <ion-title>
+              How do we define a Boutique Consulting Firm?
+            </ion-title>
+            <ion-buttons end>
+              <button ion-button *ngIf="!b2" clear icon-only (click)="this.b2 = !this.b2;">
+                <ion-icon name="ios-arrow-down"></ion-icon>
+              </button>
+              <button ion-button *ngIf="b2" clear icon-only (click)="this.b2 = !this.b2;">
+                <ion-icon name="ios-arrow-up"></ion-icon>
+              </button>
+            </ion-buttons>
+          </ion-navbar>
+          <ion-card-content *ngIf="b2">
+            <h2>
+              Any consulting organization with a team ranging from 2 to a maximum of 100 can be described as a Boutique
+              Consulting Firm. If a company is registered as one, it adds value while pitching for projects as it makes
+              it a perfect match for businesses as they look to work with registered companies for ease of doing
+              business.
+            </h2>
+          </ion-card-content>
+        </ion-card>
+
+
+        <ion-card>
+          <ion-navbar color="primary">
+            <ion-title>
+              How do I benefit by joining Bridge Et Al. as a Boutique Consulting Firm?
+            </ion-title>
+            <ion-buttons end>
+              <button ion-button *ngIf="!b3" clear icon-only (click)="this.b3 = !this.b3;">
+                <ion-icon name="ios-arrow-down"></ion-icon>
+              </button>
+              <button ion-button *ngIf="b3" clear icon-only (click)="this.b3 = !this.b3;">
+                <ion-icon name="ios-arrow-up"></ion-icon>
+              </button>
+            </ion-buttons>
+          </ion-navbar>
+          <ion-card-content *ngIf="b3">
+            <h2>
+              With the work culture moving towards gig economy, crisp, consulting short term projects will soon take
+              over the long term jobs. Joining Bridge Et Al. platform as a boutique consulting firm will help you
+              network collaborate with specialized and likeminded experts who could add value to your projects and in
+              turn, open up new opportunities for you in diverse industries and geographies. Working as a boutique
+              consulting firm arms you with a team which can provide end to end assistance to the organizations for
+              their transformation interventions and not limiting to just one project.
+            </h2>
+          </ion-card-content>
+        </ion-card>
+
+
+        <ion-card>
+          <ion-navbar color="primary">
+            <ion-title>
+              How can an independent expert form a firm?
+            </ion-title>
+            <ion-buttons end>
+              <button ion-button *ngIf="!b4" clear icon-only (click)="this.b4 = !this.b4;">
+                <ion-icon name="ios-arrow-down"></ion-icon>
+              </button>
+              <button ion-button *ngIf="b4" clear icon-only (click)="this.b4 = !this.b4;">
+                <ion-icon name="ios-arrow-up"></ion-icon>
+              </button>
+            </ion-buttons>
+          </ion-navbar>
+          <ion-card-content *ngIf="b4">
+            <h2>
+              One simple option is to connect with your peers and fellow consultants and get them to register along
+              with you as a firm. We encourage you to do so, as we find many projects requiring teams. One is also free
+              to find experts to team up with from the Bridge Et Al. platform.
+            </h2>
+          </ion-card-content>
+        </ion-card>
+
+
+        <ion-card>
+          <ion-navbar color="primary">
+            <ion-title>
+              Can an independent expert also register as a Boutique Consulting Firm?
+            </ion-title>
+            <ion-buttons end>
+              <button ion-button *ngIf="!b5" clear icon-only (click)="this.b5 = !this.b5;">
+                <ion-icon name="ios-arrow-down"></ion-icon>
+              </button>
+              <button ion-button *ngIf="b5" clear icon-only (click)="this.b5 = !this.b5;">
+                <ion-icon name="ios-arrow-up"></ion-icon>
+              </button>
+            </ion-buttons>
+          </ion-navbar>
+          <ion-card-content *ngIf="b5">
+            <h2>
+              Yes! As long as one is confident to meet with specific project requirements that ask for teams and is
+              able to bring together a team of experts as prescribed by the project. A team head who represents the
+              rest, leads the way forward.
+            </h2>
+          </ion-card-content>
+        </ion-card>
+
+
+        <ion-card>
+          <ion-navbar color="primary">
+            <ion-title>
+              Can a Boutique Consulting Firm also post a project?
+            </ion-title>
+            <ion-buttons end>
+              <button ion-button *ngIf="!b6" clear icon-only (click)="this.b6 = !this.b6;">
+                <ion-icon name="ios-arrow-down"></ion-icon>
+              </button>
+              <button ion-button *ngIf="b6" clear icon-only (click)="this.b6 = !this.b6;">
+                <ion-icon name="ios-arrow-up"></ion-icon>
+              </button>
+            </ion-buttons>
+          </ion-navbar>
+          <ion-card-content *ngIf="b6">
+            <h2>
+              Definitely! The Bridge Et Al. platform has been built to make work seamless. It would be great if a
+              Boutique Consulting Firm is able to find it viable to find experts to work on their client projects. More
+              so, since Bridge Et Al. is a competitive market place, we are sure that you will find value here.
+            </h2>
+          </ion-card-content>
+        </ion-card>
+
+
+        <ion-card>
+          <ion-navbar color="primary">
+            <ion-title>
+              Who defines the pricing when a Boutique Consulting Firm posts a project?
+            </ion-title>
+            <ion-buttons end>
+              <button ion-button *ngIf="!b7" clear icon-only (click)="this.b7 = !this.b7;">
+                <ion-icon name="ios-arrow-down"></ion-icon>
+              </button>
+              <button ion-button *ngIf="b7" clear icon-only (click)="this.b7 = !this.b7;">
+                <ion-icon name="ios-arrow-up"></ion-icon>
+              </button>
+            </ion-buttons>
+          </ion-navbar>
+          <ion-card-content *ngIf="b7">
+            <h2>
+              The Boutique Consulting Firm does. It's that simple. The Boutique Consulting Firm becomes the client.
+              Experts pitch for your projects and you follow the same path in ascertaining your best fit. The Bridge Et
+              Al. algorithm along with the Terms and Conditions of engagement safeguard your interest by ensuring
+              client information is not disclosed. An expert gets to know the project owner (organization) only at the
+              time of final hiring; which you control.
+            </h2>
+          </ion-card-content>
+        </ion-card>
+
+
+        <ion-card>
+          <ion-navbar color="primary">
+            <ion-title>
+              Can a Boutique Consulting Firm hire an expert for themselves from the Bridge Et Al platform?
+            </ion-title>
+            <ion-buttons end>
+              <button ion-button *ngIf="!b8" clear icon-only (click)="this.b8 = !this.b8;">
+                <ion-icon name="ios-arrow-down"></ion-icon>
+              </button>
+              <button ion-button *ngIf="b8" clear icon-only (click)="this.b8 = !this.b8;">
+                <ion-icon name="ios-arrow-up"></ion-icon>
+              </button>
+            </ion-buttons>
+          </ion-navbar>
+          <ion-card-content *ngIf="b8">
+            <h2>
+              Your team members may choose to create their separate profiles on Bridge Et Al. However, they should be
+              tagged to your firm as members, unless your policy states that they can take up the projects
+              independently.
+            </h2>
+          </ion-card-content>
+        </ion-card>
+
+
+        <ion-card>
+          <ion-navbar color="primary">
+            <ion-title>
+              Can an expert from my team take up projects posted on Bridge Et Al.?
+            </ion-title>
+            <ion-buttons end>
+              <button ion-button *ngIf="!b13" clear icon-only (click)="this.b13 = !this.b13;">
+                <ion-icon name="ios-arrow-down"></ion-icon>
+              </button>
+              <button ion-button *ngIf="b13" clear icon-only (click)="this.b13 = !this.b13;">
+                <ion-icon name="ios-arrow-up"></ion-icon>
+              </button>
+            </ion-buttons>
+          </ion-navbar>
+          <ion-card-content *ngIf="b13">
+            <h2>
+              Yes. Bridge Et Al. platform provides you access to projects across industries and countries where your
+              team can render their services.
+            </h2>
+          </ion-card-content>
+        </ion-card>
+
+
+        <ion-card>
+          <ion-navbar color="primary">
+            <ion-title>
+              Can members of my team create their individual profiles on Bridge Et Al.?
+            </ion-title>
+            <ion-buttons end>
+              <button ion-button *ngIf="!b14" clear icon-only (click)="this.b14 = !this.b14;">
+                <ion-icon name="ios-arrow-down"></ion-icon>
+              </button>
+              <button ion-button *ngIf="b14" clear icon-only (click)="this.b14 = !this.b14;">
+                <ion-icon name="ios-arrow-up"></ion-icon>
+              </button>
+            </ion-buttons>
+          </ion-navbar>
+          <ion-card-content *ngIf="b14">
+            <h2>
+              Your team members may choose to create their separate profiles on Bridge Et Al. However, they should be
+              tagged to your firm as members, unless your policy states that they can take up the projects
+              independently.
+            </h2>
+          </ion-card-content>
+        </ion-card>
+
+
+        <ion-card>
+          <ion-navbar color="primary">
+            <ion-title>
+              How does the payment work for a project completed by my team member/s?
+            </ion-title>
+            <ion-buttons end>
+              <button ion-button *ngIf="!b9" clear icon-only (click)="this.b9 = !this.b9;">
+                <ion-icon name="ios-arrow-down"></ion-icon>
+              </button>
+              <button ion-button *ngIf="b9" clear icon-only (click)="this.b9 = !this.b9;">
+                <ion-icon name="ios-arrow-up"></ion-icon>
+              </button>
+            </ion-buttons>
+          </ion-navbar>
+          <ion-card-content *ngIf="b9">
+            <h2>
+              The payment will be made to your firm's account. Bridge Et Al. will not be paying the member/s of a
+              boutique consulting firms individually for a successfully completed project.
+            </h2>
+          </ion-card-content>
+        </ion-card>
+
+
+        <ion-card>
+          <ion-navbar color="primary">
+            <ion-title>
+              What if I am registered as an expert on Bridge Et Al. and want to create a boutique consulting account?
+            </ion-title>
+            <ion-buttons end>
+              <button ion-button *ngIf="!b10" clear icon-only (click)="this.b10 = !this.b10;">
+                <ion-icon name="ios-arrow-down"></ion-icon>
+              </button>
+              <button ion-button *ngIf="b10" clear icon-only (click)="this.b10 = !this.b10;">
+                <ion-icon name="ios-arrow-up"></ion-icon>
+              </button>
+            </ion-buttons>
+          </ion-navbar>
+          <ion-card-content *ngIf="b10">
+            <h2>
+              Bridge Et Al. provides you access to add a profile as a boutique consulting firm.
+            </h2>
+          </ion-card-content>
+        </ion-card>
+
+
+        <ion-card>
+          <ion-navbar color="primary">
+            <ion-title>
+              Can I hire an expert for a Bridge Et Al. project?
+            </ion-title>
+            <ion-buttons end>
+              <button ion-button *ngIf="!b11" clear icon-only (click)="this.b11 = !this.b11;">
+                <ion-icon name="ios-arrow-down"></ion-icon>
+              </button>
+              <button ion-button *ngIf="b11" clear icon-only (click)="this.b11 = !this.b11;">
+                <ion-icon name="ios-arrow-up"></ion-icon>
+              </button>
+            </ion-buttons>
+          </ion-navbar>
+          <ion-card-content *ngIf="b11">
+            <h2>
+              Yes. You can hire and expert from Bridge Et Al. platform or an external resource (should be registered on
+              Bridge Et Al. platform).
+            </h2>
+          </ion-card-content>
+        </ion-card>
+
+
+        <ion-card>
+          <ion-navbar color="primary">
+            <ion-title>
+              If I hire an expert through Bridge Et Al. for one project, how does he/she get paid?
+            </ion-title>
+            <ion-buttons end>
+              <button ion-button *ngIf="!b12" clear icon-only (click)="this.b12 = !this.b12;">
+                <ion-icon name="ios-arrow-down"></ion-icon>
+              </button>
+              <button ion-button *ngIf="b12" clear icon-only (click)="this.b12 = !this.b12;">
+                <ion-icon name="ios-arrow-up"></ion-icon>
+              </button>
+            </ion-buttons>
+          </ion-navbar>
+          <ion-card-content *ngIf="b12">
+            <h2>
+              If you hire an expert for a project, the payment will be made to your firm. You will have to credit the
+              payment to the hired expert.
+            </h2>
+          </ion-card-content>
+        </ion-card>
+
+
+
+
+
+
+      </ion-list>
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+  </div>
+
+  
+
+</ion-content>

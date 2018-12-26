@@ -1,0 +1,137 @@
+<ion-header>
+  <ion-navbar padding>
+    <ion-title>
+      <img (click)="gtBP()" ion-button clear src="assets/imgs/beaLogo.png" /><br />
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="gtHIW()">How it Works</button>
+      <button ion-button>Insights</button>
+      <button ion-button (click)="gtCU()">Contact Us</button>
+      <button ion-button (click)="gtLogin()">Login</button>
+      <button ion-button (click)="gtSignUp()">Sign Up</button>
+
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <div class="slider">
+    <ion-slides pager="true" parallax="true" autoplay="3000" loop="true" zoom="true">
+      <ion-slide>
+        <img src="assets/imgs/bannersPage/1.jpg" />
+      </ion-slide>
+      <ion-slide>
+        <img src="assets/imgs/bannersPage/2.jpg" />
+      </ion-slide>
+      <ion-slide>
+        <img src="assets/imgs/bannersPage/3.jpg" />
+      </ion-slide>
+      <ion-slide>
+        <img src="assets/imgs/bannersPage/4.jpg" />
+      </ion-slide>
+      <ion-slide>
+        <img src="assets/imgs/bannersPage/5.jpg" />
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12 col-md-6>
+        <p class="vidText" ion-text color="primary">
+          Bringing together the world's top experts and organizations to achieve business goals and improve work life
+          equilibrium.
+        </p>
+      </ion-col>
+      <ion-col col-12 col-md-6>
+        <video class="vid" controls>
+          <source src="assets/imgs/bannersPage/video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="boxesRow" margin-bottom >
+      <ion-col col-8 col-md-3>
+        <p class="boxes">TOP NOTCH EXPERTS ACROSS FUNCTIONS</p>
+      </ion-col>
+      <ion-col col-8 col-md-3>
+        <p class="boxes">EXCITING GLOBAL PROJECTS</p>
+      </ion-col>
+      <ion-col col-8 col-md-3>
+        <p class="boxes">PROJECTS FROM FORTUNE 100 ORGANIZATIONS</p>
+      </ion-col>
+      <ion-col col-8 col-md-3>
+        <p class="boxes">FIND PROJECTS IN KEY BUSINESS LOCATIONS</p>
+      </ion-col>
+    </ion-row>
+
+
+
+
+  </ion-grid>
+
+
+  <ion-grid class="darkBg">
+
+    <ion-row   >
+      <ion-col padding col-12 col-md-1>
+        <img src="assets/imgs/logo-sm.png" margin />
+      </ion-col>
+
+      <ion-col class="txt-wt" margin  col-12 col-md-2>
+        About Us<br />
+        How It Works<br />
+        Articles<br />
+        Contact Us<br />
+      </ion-col>
+
+      <ion-col class="txt-wt" margin  col-12 col-md-2>
+        Resources<br />
+        Careers<br />
+        FAQs<br />
+      </ion-col>
+      <ion-col class="txt-wt" margin  col-12 col-md-2>
+        Terms & Conditions<br />
+        Privacy Policy<br />
+        Cookie Policy<br />
+      </ion-col>
+
+      <ion-col col-12 col-md-2  class="box" >
+        <h2 class="txt-wt">Follow and Share Us on </h2>
+        <a  href="https://www.facebook.com/bridgeetal/" target="_blank" class="lgos">
+          <img src="assets/imgs/footer/fb.png" width="20%;" />
+        </a>
+        <a  href="https://twitter.com/bridgeetal" target="_blank" class="lgos">
+          <img src="assets/imgs/footer/l.png" width="20%;" />
+        </a>
+        <a  href="#" target="_blank"  class="lgos" >
+          <img src="assets/imgs/footer/tw.png" width="20%;" />
+        </a>
+      </ion-col>
+
+
+      <ion-col class="txt-wt" col-12 col-md-2>
+        <h2 class="txt-wt">Subscribe to our newsletter</h2>
+        <ion-input type="text" style="border : 1px solid white" (keyup.enter)="subscribe()" placeholder="Enter your email"
+          [(ngModel)]="mail"></ion-input>
+        <button ion-button color="secondary" (click)="subscribe()" margin-top>Subscribe</button>
+      </ion-col>
+
+    </ion-row>
+
+
+
+
+    <ion-row class="darkBg">
+      <ion-col col-12>
+        <p text-center class="txt-wt">Copyright 2011 - 2018 All rights reserved</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+
+</ion-content>

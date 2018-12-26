@@ -1,0 +1,23 @@
+page-contact-us {
+.half{
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translate(-50% );
+    transform: translate(-50%);
+    width: 40%;
+}
+.quater{
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translate(-50% );
+    transform: translate(-50%);
+    width: 70%;
+}
+ion-textarea,ion-input{
+    border: 1px solid map-get($colors,primary);
+}
+ion-select{
+    border: 1px solid map-get($colors,primary);
+}
+}
+
