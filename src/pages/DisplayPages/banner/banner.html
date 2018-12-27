@@ -7,9 +7,9 @@
       <button ion-button (click)="gtHIW()">How it Works</button>
       <button ion-button>Insights</button>
       <button ion-button (click)="gtCU()">Contact Us</button>
-      <button ion-button (click)="gtLogin()">Login</button>
-      <button ion-button (click)="gtSignUp()">Sign Up</button>
-
+      <button *ngIf="userIn" ion-button (click)="gtLogin()">Login</button>
+      <button *ngIf="userIn" ion-button (click)="gtSignUp()">Sign Up</button>
+      <button ion-button outline (click)="gtDashboard()" *ngIf="!userIn" color="secondary">Go to Dashboard</button>
     </ion-buttons>
   </ion-navbar>
 </ion-header>
@@ -52,7 +52,7 @@
       </ion-col>
     </ion-row>
 
-    <ion-row class="boxesRow" margin-bottom >
+    <ion-row class="boxesRow" margin-bottom>
       <ion-col col-8 col-md-3>
         <p class="boxes">TOP NOTCH EXPERTS ACROSS FUNCTIONS</p>
       </ion-col>
@@ -75,38 +75,38 @@
 
   <ion-grid class="darkBg">
 
-    <ion-row   >
+    <ion-row>
       <ion-col padding col-12 col-md-1>
         <img src="assets/imgs/logo-sm.png" margin />
       </ion-col>
 
-      <ion-col class="txt-wt" margin  col-12 col-md-2>
+      <ion-col class="txt-wt" margin col-12 col-md-2>
         About Us<br />
         How It Works<br />
         Articles<br />
         Contact Us<br />
       </ion-col>
 
-      <ion-col class="txt-wt" margin  col-12 col-md-2>
+      <ion-col class="txt-wt" margin col-12 col-md-2>
         Resources<br />
         Careers<br />
         FAQs<br />
       </ion-col>
-      <ion-col class="txt-wt" margin  col-12 col-md-2>
+      <ion-col class="txt-wt" margin col-12 col-md-2>
         Terms & Conditions<br />
         Privacy Policy<br />
         Cookie Policy<br />
       </ion-col>
 
-      <ion-col col-12 col-md-2  class="box" >
+      <ion-col col-12 col-md-2 class="box">
         <h2 class="txt-wt">Follow and Share Us on </h2>
-        <a  href="https://www.facebook.com/bridgeetal/" target="_blank" class="lgos">
+        <a href="https://www.facebook.com/bridgeetal/" target="_blank" class="lgos">
           <img src="assets/imgs/footer/fb.png" width="20%;" />
         </a>
-        <a  href="https://twitter.com/bridgeetal" target="_blank" class="lgos">
+        <a href="https://twitter.com/bridgeetal" target="_blank" class="lgos">
           <img src="assets/imgs/footer/l.png" width="20%;" />
         </a>
-        <a  href="#" target="_blank"  class="lgos" >
+        <a href="#" target="_blank" class="lgos">
           <img src="assets/imgs/footer/tw.png" width="20%;" />
         </a>
       </ion-col>

@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, MenuController, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, MenuController, ToastController, Platform } from 'ionic-angular';
 import { AngularFirestore } from 'angularfire2/firestore';
 import { HowItWorksPage } from '../how-it-works/how-it-works';
 import { ContactUsPage } from '../contact-us/contact-us';
 import { LoginPage } from '../../Auth/login/login';
 import { SignUpPage } from '../../Auth/sign-up/sign-up';
-
+import { DashboardPage } from '../../MainPages/dashboard/dashboard';
+import * as firebase from 'firebase';
 
 @IonicPage()
 @Component({
@@ -16,14 +17,29 @@ export class BannerPage {
 
   mail: string;
 
+  userIn : boolean ;
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public db: AngularFirestore,
+    public platform : Platform,
     public toastCtrl: ToastController,
     public menuCtrl: MenuController,
   ) {
     this.menuCtrl.enable(false);
+  }
+  ionViewDidLoad(){
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        console.log(user.uid);
+        this.userIn = true;
+      } else {
+        console.log("No User")
+        this.userIn = false;
+      }
+    });
+
   }
 
 
@@ -43,6 +59,10 @@ export class BannerPage {
     }
   }
 
+
+  gtDashboard(){
+    this.navCtrl.setRoot(DashboardPage);
+  } 
 
   presentToast(msg) {
     let toast = this.toastCtrl.create({

@@ -4,6 +4,7 @@ import { SignUpPage } from '../../Auth/sign-up/sign-up';
 import { LoginPage } from '../../Auth/login/login';
 import { ContactUsPage } from '../contact-us/contact-us';
 import { BannerPage } from '../banner/banner';
+import * as firebase from 'firebase';
 
 @IonicPage()
 @Component({
@@ -11,6 +12,8 @@ import { BannerPage } from '../banner/banner';
   templateUrl: 'how-it-works.html',
 })
 export class HowItWorksPage {
+
+  userIn : boolean =false;
 
   accnts = "Experts";
 
@@ -21,7 +24,18 @@ export class HowItWorksPage {
   ) {
     this.menuCtrl.enable(false);
   }
+  ionViewDidLoad(){
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        console.log(user.uid);
+        this.userIn = true;
+      } else {
+        console.log("No User")
+        this.userIn = false;
+      }
+    });
 
+  }
 
 
 

@@ -6,6 +6,7 @@ import { HowItWorksPage } from '../how-it-works/how-it-works';
 import { BannerPage } from '../banner/banner';
 import { AngularFirestore } from 'angularfire2/firestore';
 import moment from 'moment';
+import * as firebase from 'firebase';
 
 
 @IonicPage()
@@ -14,6 +15,8 @@ import moment from 'moment';
   templateUrl: 'contact-us.html',
 })
 export class ContactUsPage {
+
+  userIn : boolean ;
 
   name: string;
   mail: string;
@@ -32,6 +35,19 @@ export class ContactUsPage {
   ) {
     this.menuCtrl.enable(false);
   }
+  ionViewDidLoad(){
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        console.log(user.uid);
+        this.userIn = true;
+      } else {
+        console.log("No User")
+        this.userIn = false;
+      }
+    });
+
+  }
+
 
   checkData() {
     let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
