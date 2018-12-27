@@ -16,6 +16,7 @@ import { DashboardPage } from '../pages/MainPages/dashboard/dashboard';
 import { BannerPage } from '../pages/DisplayPages/banner/banner';
 import { ContactUsPage } from '../pages/DisplayPages/contact-us/contact-us';
 import { HowItWorksPage } from '../pages/DisplayPages/how-it-works/how-it-works';
+import { TermsPage } from '../pages/DisplayPages/terms/terms';
 
 export const firebaseCred = {
   apiKey: "AIzaSyBdR8iHLCNUhjaWWj6cvzXWw5laH0pdyl4",
@@ -38,6 +39,7 @@ firebase.initializeApp(firebaseCred);
     BannerPage,
     ContactUsPage,
     HowItWorksPage,
+    TermsPage,
   ],
   imports: [
     BrowserModule,
@@ -59,6 +61,7 @@ firebase.initializeApp(firebaseCred);
     BannerPage,
     ContactUsPage,
     HowItWorksPage,
+    TermsPage,
   ],
   providers: [
     StatusBar,

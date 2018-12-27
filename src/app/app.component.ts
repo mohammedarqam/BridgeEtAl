@@ -8,6 +8,7 @@ import { HowItWorksPage } from '../pages/DisplayPages/how-it-works/how-it-works'
 import { ContactUsPage } from '../pages/DisplayPages/contact-us/contact-us';
 import { LoginPage } from '../pages/Auth/login/login';
 import { SignUpPage } from '../pages/Auth/sign-up/sign-up';
+import { TermsPage } from '../pages/DisplayPages/terms/terms';
 
 
 @Component({
@@ -16,7 +17,7 @@ import { SignUpPage } from '../pages/Auth/sign-up/sign-up';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = ContactUsPage;
+  rootPage: any = TermsPage;
 
   pages: Array<{title: string, component: any}>;
 

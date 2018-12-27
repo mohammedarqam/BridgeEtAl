@@ -12,6 +12,14 @@ import { LoginPage } from '../login/login';
 })
 export class SignUpPage {
 
+  first : string;
+  last : string;
+  mail : string;
+  pass : string;
+  passC : string;
+  userType : string;
+  terms : boolean;
+
   constructor(
   public navCtrl: NavController, 
   public menuCtrl : MenuController,
