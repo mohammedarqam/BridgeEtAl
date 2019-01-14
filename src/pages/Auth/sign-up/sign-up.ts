@@ -41,23 +41,23 @@ export class SignUpPage {
     let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     this.db.collection(`UserType/${this.userType}`).doc("res.id").set(true);
 
-    // if (this.first) {
-    //   if (this.last) {
-    //     if (this.mail.match(mailformat)) {
-    //       if (this.pass) {
-    //         if (this.passC) {
-    //           if (this.pass == this.passC) {
-    //             if (this.userType) {
-    //               if (this.terms) {
-    //                 this.signUp();
-    //               } else { this.presentToast("Accept Terms and Conditions"); }
-    //             } else { this.presentToast("Select a User Type") }
-    //           } else { this.presentToast("Passwords do not Match") }
-    //         } else { this.presentToast("Re-Enter Password"); }
-    //       } else { this.presentToast("Enter a password"); }
-    //     } else { this.presentToast("Email not Valid") }
-    //   } else { this.presentToast("Enter your last Name") }
-    // } else { this.presentToast("Enter First Name") }
+    if (this.first) {
+      if (this.last) {
+        if (this.mail.match(mailformat)) {
+          if (this.pass) {
+            if (this.passC) {
+              if (this.pass == this.passC) {
+                if (this.userType) {
+                  if (this.terms) {
+                    this.signUp();
+                  } else { this.presentToast("Accept Terms and Conditions"); }
+                } else { this.presentToast("Select a User Type") }
+              } else { this.presentToast("Passwords do not Match") }
+            } else { this.presentToast("Re-Enter Password"); }
+          } else { this.presentToast("Enter a password"); }
+        } else { this.presentToast("Email not Valid") }
+      } else { this.presentToast("Enter your last Name") }
+    } else { this.presentToast("Enter First Name") }
 
   }
 

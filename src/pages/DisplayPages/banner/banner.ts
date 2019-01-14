@@ -30,15 +30,15 @@ export class BannerPage {
     this.menuCtrl.enable(false);
   }
   ionViewDidLoad(){
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-        console.log(user.uid);
-        this.userIn = true;
-      } else {
-        console.log("No User")
-        this.userIn = false;
-      }
-    });
+    // firebase.auth().onAuthStateChanged(function(user) {
+    //   if (user) {
+    //     console.log(user.uid);
+    //     this.userIn = true;
+    //   } else {
+    //     console.log("No User")
+    //     this.userIn = false;
+    //   }
+    // });
 
   }
 

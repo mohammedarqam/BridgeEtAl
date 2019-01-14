@@ -2,13 +2,9 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import * as firebase from 'firebase';
 import { DashboardPage } from '../pages/MainPages/dashboard/dashboard';
 import { BannerPage } from '../pages/DisplayPages/banner/banner';
-import { HowItWorksPage } from '../pages/DisplayPages/how-it-works/how-it-works';
-import { ContactUsPage } from '../pages/DisplayPages/contact-us/contact-us';
-import { LoginPage } from '../pages/Auth/login/login';
-import { SignUpPage } from '../pages/Auth/sign-up/sign-up';
-import { TermsPage } from '../pages/DisplayPages/terms/terms';
 
 
 @Component({
@@ -19,7 +15,7 @@ export class MyApp {
 
   rootPage: any = BannerPage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{ title: string, component: any }>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
@@ -33,7 +29,16 @@ export class MyApp {
 
   initializeApp() {
     this.platform.ready().then(() => {
-        this.statusBar.styleDefault();
+
+      firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
+          this.nav.setRoot(DashboardPage);
+        } else {
+          this.nav.setRoot(BannerPage);
+        }
+      });
+
+      this.statusBar.styleDefault();
       this.splashScreen.hide();
     });
   }
@@ -43,7 +48,10 @@ export class MyApp {
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
   }
-  gtBannerPage(){
+  gtBannerPage() {
     this.nav.setRoot(BannerPage);
+  }
+  singOut() {
+    firebase.auth().signOut();
   }
 }

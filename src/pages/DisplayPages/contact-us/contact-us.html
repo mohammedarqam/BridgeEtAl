@@ -18,7 +18,7 @@
 
 <ion-content padding>
 
-  <div class="half" padding-top margin-top>
+  <div class="half" padding-top margin-top margin-bottom>
     <h1 ion-text text-center color="primary">Have a question/suggestion.</h1>
     <h5 ion-text text-center style="color : grey">
       We're always eager to hear from you and would be glad to be of assistance
@@ -59,5 +59,64 @@
       <button margin-top float-right ion-button (click)="checkData()">Submit</button>
     </div>
   </div>
+
+  <ion-grid class="darkBg" margin-top>
+
+    <ion-row>
+      <ion-col padding col-12 col-md-1>
+        <img src="assets/imgs/logo-sm.png" margin />
+      </ion-col>
+
+      <ion-col class="txt-wt" margin col-12 col-md-2>
+        About Us<br />
+        How It Works<br />
+        Articles<br />
+        Contact Us<br />
+      </ion-col>
+
+      <ion-col class="txt-wt" margin col-12 col-md-2>
+        Resources<br />
+        Careers<br />
+        FAQs<br />
+      </ion-col>
+      <ion-col class="txt-wt" margin col-12 col-md-2>
+        Terms & Conditions<br />
+        Privacy Policy<br />
+        Cookie Policy<br />
+      </ion-col>
+
+      <ion-col col-12 col-md-2 class="box">
+        <h2 class="txt-wt">Follow and Share Us on </h2>
+        <a href="https://www.facebook.com/bridgeetal/" target="_blank" class="lgos">
+          <img src="assets/imgs/footer/fb.png" width="20%;" />
+        </a>
+        <a href="https://twitter.com/bridgeetal" target="_blank" class="lgos">
+          <img src="assets/imgs/footer/l.png" width="20%;" />
+        </a>
+        <a href="#" target="_blank" class="lgos">
+          <img src="assets/imgs/footer/tw.png" width="20%;" />
+        </a>
+      </ion-col>
+
+
+      <ion-col class="txt-wt" col-12 col-md-2>
+        <h2 class="txt-wt">Subscribe to our newsletter</h2>
+        <ion-input type="text" style="border : 1px solid white" (keyup.enter)="subscribe()" placeholder="Enter your email"
+          [(ngModel)]="mail"></ion-input>
+        <button ion-button color="secondary" (click)="subscribe()" margin-top>Subscribe</button>
+      </ion-col>
+
+    </ion-row>
+
+
+
+
+    <ion-row class="darkBg">
+      <ion-col col-12>
+        <p text-center class="txt-wt">Copyright 2011 - 2018 All rights reserved</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
 
 </ion-content>
